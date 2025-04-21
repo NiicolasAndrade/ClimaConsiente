@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clima Consciente</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="container">
+        <a href="#home" class="logo"><i class="fas fa-leaf"></i> ClimaConsciente</a>
+        <button class="menu-toggle" aria-label="Menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#simulacoes">Simulações</a></li>
+          <li><a href="#calculadora">Calculadora</a></li>
+          <li><a href="#monitoramento">Monitoramento</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#forum">Fórum</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section section-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Clima Consciente</h1>
+          <p>Simulações, cálculo de pegada e monitoramento em tempo real.</p>
+          <a href="#simulacoes" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulacoes" class="section">
+      <div class="container">
+        <h2><i class="fas fa-chart-line"></i> Simulações</h2>
+        <div class="sim-group">
+          <label>Desmatamento: <span id="desmatamento-value">0</span>%</label>
+          <input type="range" id="desmatamento-range" min="0" max="100" value="0">
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="grafico-desmatamento"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculadora" class="section">
+      <div class="container">
+        <h2><i class="fas fa-calculator"></i> Calculadora de Pegada</h2>
+        <form id="form-pegada" class="form-layout">
+          <input type="number" name="transporte" placeholder="Transporte (km/semana)" required>
+          <input type="number" name="energia" placeholder="Energia (kWh/mês)" required>
+          <select name="alimentacao" required>
+            <option value="" disabled selected>Selecione sua dieta</option>
+            <option value="0.5">Vegana</option>
+            <option value="1">Vegetariana</option>
+            <option value="1.5">Onívora</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+        <div id="resultado-pegada" class="result"></div>
+      </div>
+    </section>
+
+    <section id="monitoramento" class="section section-alt">
+      <div class="container">
+        <h2><i class="fas fa-globe-americas"></i> Monitoramento</h2>
+        <div class="cards">
+          <div class="card">
+            <i class="fas fa-temperature-high"></i>
+            <div>Temp: <strong><span id="temp">28</span>°C</strong></div>
+          </div>
+          <div class="card">
+            <i class="fas fa-wind"></i>
+            <div>Ar: <strong><span id="aqi">Bom</span></strong></div>
+          </div>
+          <div class="card">
+            <i class="fas fa-smog"></i>
+            <div>CO₂: <strong><span id="co2">415</span> ppm</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="noticias" class="section">
+      <div class="container">
+        <h2><i class="fas fa-newspaper"></i> Notícias</h2>
+        <ul id="feed-noticias" class="news-list">
+          <li>
+            <a href="#">Novas políticas ambientais serão implementadas</a>
+            <span class="news-date">15/06/2023</span>
+          </li>
+          <li>
+            <a href="#">Relatório mostra aumento da temperatura global</a>
+            <span class="news-date">10/06/2023</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="forum" class="section section-alt">
+      <div class="container">
+        <h2><i class="fas fa-comments"></i> Fórum</h2>
+        <form id="form-forum" class="forum-form">
+          <textarea id="msg-forum" placeholder="Sua mensagem..." required></textarea>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <ul id="lista-forum" class="forum-list">
+          <!-- Mensagens serão carregadas aqui -->
+        </ul>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2><i class="fas fa-info-circle"></i> Sobre</h2>
+        <p>Projeto equipe Ceará Científico 2025.</p>
+        <div class="team">
+          <div class="member">
+            <i class="fas fa-user"></i>
+            <span>Membro 1</span>
+          </div>
+          <div class="member">
+            <i class="fas fa-user"></i>
+            <span>Membro 2</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Clima Consciente</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
